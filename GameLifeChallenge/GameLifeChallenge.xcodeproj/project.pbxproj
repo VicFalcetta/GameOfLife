@@ -42,9 +42,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22A466742374B59E000AB306 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				22A31267236CC7AC00745997 /* Cell.swift */,
+				22FAD52523709AA30099ED23 /* Grid.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		22A466752374B5A6000AB306 /* Cenas */ = {
+			isa = PBXGroup;
+			children = (
+				22A31265236CAE7600745997 /* GameCena.swift */,
+			);
+			path = Cenas;
+			sourceTree = "<group>";
+		};
+		22A466772374B5C8000AB306 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22B7A306236CA939006D151B /* GameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		22B7A2F8236CA939006D151B = {
 			isa = PBXGroup;
 			children = (
+				22A466772374B5C8000AB306 /* Controller */,
+				22A466752374B5A6000AB306 /* Cenas */,
+				22A466742374B59E000AB306 /* Classes */,
 				22B7A303236CA939006D151B /* GameLifeChallenge */,
 				22B7A302236CA939006D151B /* Products */,
 			);
@@ -62,15 +90,11 @@
 			isa = PBXGroup;
 			children = (
 				22B7A304236CA939006D151B /* AppDelegate.swift */,
-				22B7A306236CA939006D151B /* GameViewController.swift */,
 				22B7A308236CA939006D151B /* art.scnassets */,
 				22B7A30A236CA93B006D151B /* Assets.xcassets */,
 				22B7A30C236CA93B006D151B /* Main.storyboard */,
 				22B7A30F236CA93B006D151B /* Info.plist */,
 				22B7A310236CA93B006D151B /* GameLifeChallenge.entitlements */,
-				22A31265236CAE7600745997 /* GameCena.swift */,
-				22A31267236CC7AC00745997 /* Cell.swift */,
-				22FAD52523709AA30099ED23 /* Grid.swift */,
 			);
 			path = GameLifeChallenge;
 			sourceTree = "<group>";

@@ -33,8 +33,9 @@ class GameCena: SCNScene {
         planoNode.position = SCNVector3(0, plano.height/2, 0)
         rootNode.addChildNode(planoNode)
         
-
+        //Grid logica para realizar as mudancas para aplicar nas copias. Ela nao e adicionada a cena.
         let gridLogica = Grid(sizeLength: plano.length, sizeWidth: plano.width, sizeHeight: plano.height)
+        
         let grid = Grid(sizeLength: plano.length, sizeWidth: plano.width, sizeHeight: plano.height)
         grid.position = SCNVector3(0, 0, 0)
         rootNode.addChildNode(grid)
