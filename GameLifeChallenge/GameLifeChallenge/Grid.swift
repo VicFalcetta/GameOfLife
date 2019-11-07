@@ -158,32 +158,4 @@ class Grid: SCNNode {
         }
         return vizinhos
     }
-    
-//    func percorreGrid() {
-//        var vizinhos: Int
-//        for n in 0 ..< gridCell.count {
-//            for m in 0 ..< gridCell[n].count {
-//                vizinhos = contaVizinhos(posX: m, posY: n)
-//                if (gridCell[n][m].isViva == 1) && (vizinhos > 1) && (vizinhos < 4) {
-//                    gridCell[n][m].vaiViver = true
-//                } else if (gridCell[n][m].isViva == 0) && (vizinhos == 3) {
-//                    gridCell[n][m].vaiViver = true
-//                } else {
-//                    gridCell[n][m].vaiViver = false
-//                }
-//            }
-//        }
-//        for n in 0 ..< gridCell.count {
-//            for m in 0 ..< gridCell[n].count {
-//                if (gridCell[n][m].vaiViver == false) {
-//                    gridCell[n][m].removeFromParentNode()
-//                    gridCell[n][m].isViva = 0
-//                }
-//                else {
-//                    gridCell[n][m].isViva = 1
-//                    addChildNode(gridCell[n][m])
-//                }
-//            }
-//        }
-//    }
 }

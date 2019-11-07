@@ -16,11 +16,22 @@ class GameViewController: NSViewController {
         
         let scnView = self.view as! SCNView
         scnView.scene = GameCena()
+        setupLight(rootNode: scnView.scene!.rootNode)
         scnView.allowsCameraControl = true
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        
+    func setupLight(rootNode: SCNNode) {
+        let lightNode = SCNNode()
+        lightNode.light = SCNLight()
+        lightNode.light!.type = .omni
+        lightNode.position = SCNVector3(x: 0, y: 100, z: 100)
+        rootNode.addChildNode(lightNode)
+
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light!.type = .ambient
+        ambientLightNode.light!.color = NSColor.gray
+        rootNode.addChildNode(ambientLightNode)
     }
     
     

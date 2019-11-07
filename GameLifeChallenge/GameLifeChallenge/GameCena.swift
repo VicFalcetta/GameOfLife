@@ -26,7 +26,7 @@ class GameCena: SCNScene {
         cameraNode.rotation = SCNVector4(x: 5, y: 5, z: 0, w: 150)
         cameraNode.position = SCNVector3(x: -70, y: 60, z: 90)
         
-        let plano = SCNBox(width: 20, height: 5, length: 20, chamferRadius: 0)
+        let plano = SCNBox(width: 40, height: 5, length: 40, chamferRadius: 0)
         plano.firstMaterial?.diffuse.contents = NSColor.gray
         
         let planoNode = SCNNode(geometry: plano)
@@ -76,8 +76,11 @@ class GameCena: SCNScene {
     }
     
     func loopGrid(grid: Grid) {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { timer in
             self.criaCopiaGrid(grid: grid)
+            if (self.altura == 100) {
+                timer.invalidate()
+            }
             
         }
     }
@@ -99,5 +102,8 @@ class GameCena: SCNScene {
             rootNode.addChildNode(gridCopia)
         }
         self.altura += 1
+        
     }
+    
+    
 }
