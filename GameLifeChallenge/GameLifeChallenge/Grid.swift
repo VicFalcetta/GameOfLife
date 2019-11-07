@@ -33,7 +33,7 @@ class Grid: SCNNode {
             for m in 0 ..< Int(sizeLength) {
                 //Random para dizer se a linha está viva ou não
 //                let randomNumber = Int.random(in: 0 ... 10)
-                if (n == 4) || (n == 16) || (m == 6) || (m == 17) {
+                if (n == 4) || (n == 16) || (n == 34) || (m == 6) || (m == 17) || (m == 32){
                     let cell = Cell(isViva: 1, posX: CGFloat(n), posY: CGFloat(m), cuboTam: 1)
                     linhaDoGrid.append(cell)
                 }

@@ -33,13 +33,11 @@ class GameCena: SCNScene {
         planoNode.position = SCNVector3(0, plano.height/2, 0)
         rootNode.addChildNode(planoNode)
         
-
-        let gridLogica = Grid(sizeLength: plano.length, sizeWidth: plano.width, sizeHeight: plano.height)
         let grid = Grid(sizeLength: plano.length, sizeWidth: plano.width, sizeHeight: plano.height)
         grid.position = SCNVector3(0, 0, 0)
         rootNode.addChildNode(grid)
         
-        loopGrid(grid: gridLogica)
+        loopGrid(grid: grid)
         
     }
     
@@ -77,33 +75,7 @@ class GameCena: SCNScene {
     
     func loopGrid(grid: Grid) {
         timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { timer in
-            self.criaCopiaGrid(grid: grid)
-            if (self.altura == 100) {
-                timer.invalidate()
-            }
-            
+            self.percorreGrid(grid: grid)
         }
     }
-    
-    func criaCopiaGrid(grid: Grid) {
-        percorreGrid(grid: grid)
-        let gridCopia = Grid(sizeLength: grid.sizeLength, sizeWidth: grid.sizeWidth, sizeHeight: grid.sizeHeight + self.altura)
-        for n in 0 ..< Int(gridCopia.sizeWidth) {
-            for m in 0 ..< Int(gridCopia.sizeLength) {
-                if (grid.gridCell[n][m].isViva == 0) {
-                    gridCopia.gridCell[n][m].isViva = 0
-                } else {
-                    gridCopia.gridCell[n][m].isViva = 1
-                }
-            }
-        }
-        if (self.altura <= 100) {
-            percorreGrid(grid: gridCopia)
-            rootNode.addChildNode(gridCopia)
-        }
-        self.altura += 1
-        
-    }
-    
-    
 }
